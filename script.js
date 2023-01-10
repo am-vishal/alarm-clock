@@ -4,7 +4,8 @@
 const currentTime = document.querySelector("h1"),
     content = document.querySelector(".content"),
     selectMenu = document.querySelectorAll("select"),
-    setAlarmBtn = document.querySelector("button");
+    setAlarmBtn = document.querySelector("button"),
+    upcomingAlarm = document.querySelector(".upcoming-alarm");
 
 // The variables above are used to select elements on the page. 
 // "currentTime" selects the element where the current time will be displayed.
@@ -74,6 +75,7 @@ function setAlarm() {
     if (time.includes("Hour") || time.includes("Minute") || time.includes("AM/PM")) {
         return alert("Please, select a valid time to set Alarm!");
     }
+    upcomingAlarm.innerHTML = time
     alarmTime = time;
     isAlarmSet = true;
     content.classList.add("disable");
