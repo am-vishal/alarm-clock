@@ -68,6 +68,7 @@ function setAlarm() {
         ringtone.pause();
         content.classList.remove("disable");
         setAlarmBtn.innerText = "Set Alarm";
+        upcomingAlarm.innerHTML = ""
         return isAlarmSet = false;
     }
 
@@ -75,9 +76,9 @@ function setAlarm() {
     if (time.includes("Hour") || time.includes("Minute") || time.includes("AM/PM")) {
         return alert("Please, select a valid time to set Alarm!");
     }
-    upcomingAlarm.innerHTML = time
     alarmTime = time;
     isAlarmSet = true;
+    upcomingAlarm.innerHTML = time
     content.classList.add("disable");
     setAlarmBtn.innerText = "Clear Alarm";
 }
